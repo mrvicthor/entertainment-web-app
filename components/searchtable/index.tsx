@@ -14,7 +14,7 @@ const SearchTable = () => {
       <input
         type="text"
         placeholder="Search for movies or TV series"
-        className="bg-transparent text-sm text-[#ffffff] outline-none focus:outline-none"
+        className="bg-transparent text-[#ffffff] outline-none placeholder:text-sm focus:outline-none"
       />
     </form>
   );
