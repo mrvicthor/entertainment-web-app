@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const SearchTable = () => {
   return (
-    <form className="flex h-[1.5rem] w-[16.0625rem] space-x-4">
+    <form className="flex h-[1.5rem] min-w-[16.0625rem] space-x-4">
       <div className="relative">
         <Image
           src="./assets/icon-search.svg"
@@ -14,7 +14,7 @@ const SearchTable = () => {
       <input
         type="text"
         placeholder="Search for movies or TV series"
-        className="bg-transparent text-[#ffffff] outline-none placeholder:text-sm focus:outline-none"
+        className="bg-transparent text-[#ffffff] outline-none placeholder:text-xs focus:outline-none"
       />
     </form>
   );
