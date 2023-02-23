@@ -7,7 +7,7 @@ interface TrendProps {
 }
 const Trend = ({ trend }: TrendProps) => {
   return (
-    <div className="relative h-[8.75rem] rounded-md">
+    <div className="relative h-[8.75rem] rounded-md md:h-[14.375rem]">
       <Image
         src={trend.thumbnail.regular.small.replace(/^\.\//, "/")}
         alt="movie image"
@@ -17,7 +17,7 @@ const Trend = ({ trend }: TrendProps) => {
               (max-width: 1200px) 50vw,
               33vw"
       />
-      <div className="absolute top-[5.375rem] left-4">
+      <div className="absolute top-[5.375rem] left-4 md:top-[9.625rem]">
         <div className="flex items-center gap-1">
           <span className="text-[0.75rem] leading-[15.12px] opacity-75">
             {trend.year}
@@ -62,11 +62,11 @@ const Trend = ({ trend }: TrendProps) => {
             {trend.rating}
           </span>
         </div>
-        <p className="pt-1 text-[0.9375rem] font-medium leading-[18.9px]">
+        <p className="pt-1 text-[0.9375rem] font-medium leading-[18.9px] md:text-[1.5rem] md:leading-[30.24px]">
           {trend.title}
         </p>
       </div>
-      <div className="absolute right-2 top-2 flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-[#10141E] opacity-50">
+      <div className="absolute right-2 top-2 flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-[#10141E] opacity-50 md:top-4 md:right-4">
         <div className=" relative">
           <Image
             src="./assets/icon-bookmark-empty.svg"

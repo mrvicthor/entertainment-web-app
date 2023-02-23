@@ -15,7 +15,7 @@ export default function Home() {
     <section className=" md:pt-6 lg:pt-8 lg:pl-8">
       <div className="grid h-full lg:grid-cols-12 lg:gap-x-[2.25rem]">
         <Header />
-        <main className="overflow-hidden lg:col-start-2 lg:col-end-13">
+        <main className="overflow-hidden md:mx-auto md:max-w-[44.9375rem] lg:col-start-2 lg:col-end-13">
           <FilterMovies />
           {/* <h1 className="text-3xl font-bold underline">Hello world!</h1>
           <h2>
