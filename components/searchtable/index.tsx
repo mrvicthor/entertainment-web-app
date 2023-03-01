@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-const SearchTable = () => {
+interface SearchTableProps {
+  search: string;
+  setSearch: (search: string) => void;
+}
+const SearchTable = ({ search, setSearch }: SearchTableProps) => {
   return (
     <form className="flex h-[1.5rem] min-w-[16.0625rem] space-x-4">
       <div className="relative">
@@ -13,6 +17,8 @@ const SearchTable = () => {
       </div>
       <input
         type="text"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
         placeholder="Search for movies or TV series"
         className="bg-transparent text-[#ffffff] outline-none placeholder:text-xs focus:outline-none"
       />
