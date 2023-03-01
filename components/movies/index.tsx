@@ -1,14 +1,15 @@
-import { Movies } from "@/model";
-import Image from "next/image";
-import { BsDot } from "react-icons/bs";
 import { Movie } from "@/components";
-interface MoviesProp {
-  movies: Movies[];
-  search: string;
-}
+import { useMovies } from "@/store";
 
-const Movies = ({ movies, search }: MoviesProp) => {
-  console.log(movies);
+const Movies = () => {
+  const { movies, search } = useMovies();
+  //   let allMovies = movies;
+  //   if (search) {
+  //     allMovies = allMovies.filter((movie) =>
+  //       movie.title.toLowerCase().startsWith(search.toLowerCase())
+  //     );
+  //   }
+  console.log(search);
   return (
     <section className="space-y-6">
       {search !== "" && movies.length > 0 && (

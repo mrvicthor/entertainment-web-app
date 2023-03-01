@@ -1,10 +1,9 @@
 import Image from "next/image";
+import { useMovies } from "@/store";
 
-interface SearchTableProps {
-  search: string;
-  setSearch: (search: string) => void;
-}
-const SearchTable = ({ search, setSearch }: SearchTableProps) => {
+const SearchTable = () => {
+  const { search, setSearch } = useMovies();
+  console.log(search);
   return (
     <form className="flex h-[1.5rem] min-w-[16.0625rem] space-x-4">
       <div className="relative">
