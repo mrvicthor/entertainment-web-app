@@ -14,6 +14,7 @@ function useMovieSource(): {
   movies: Movies[];
   search: string;
   setSearch: (search: string) => void;
+  toggleBookmark: (movie: Movies) => void;
 } {
   type MovieState = {
     movies: Movies[];
@@ -26,7 +27,7 @@ function useMovieSource(): {
         payload: Movies[];
       }
     | { type: "setSearch"; payload: string }
-    | { type: "setBookmark"; payload: number };
+    | { type: "toggleBookmark"; payload: Movies };
 
   const [{ movies, search }, dispatch] = useReducer(
     (state: MovieState, action: MovieAction) => {
@@ -35,15 +36,14 @@ function useMovieSource(): {
           return { ...state, movies: action.payload };
         case "setSearch":
           return { ...state, search: action.payload };
-        case "setBookmark":
+        case "toggleBookmark":
           return {
             ...state,
-            movies: state.movies.map((m: any, index: number) => {
-              if (m.id === action.payload) {
-                return { ...m, isBookmarked: !m.isBookmarked };
-              }
-              return m;
-            }),
+            movies: state.movies.map((movie) =>
+              movie === action.payload
+                ? { ...movie, isBookmarked: !movie.isBookmarked }
+                : movie
+            ),
           };
       }
     },
@@ -64,8 +64,8 @@ function useMovieSource(): {
       );
   }, []);
 
-  const setBookmark = useCallback((index: number) => {
-    dispatch({ type: "setBookmark", payload: index });
+  const toggleBookmark = useCallback((movie: Movies) => {
+    dispatch({ type: "toggleBookmark", payload: movie });
   }, []);
 
   const setSearch = useCallback((search: string) => {
@@ -80,7 +80,7 @@ function useMovieSource(): {
     [movies, search]
   );
 
-  return { movies: filteredMovies, search, setSearch };
+  return { movies: filteredMovies, search, setSearch, toggleBookmark };
 }
 
 const MoviesContext = createContext<ReturnType<typeof useMovieSource>>(

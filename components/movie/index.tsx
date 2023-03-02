@@ -1,10 +1,12 @@
 import { Movies } from "@/model";
 import Image from "next/image";
 import { BsDot } from "react-icons/bs";
+import { useMovies } from "@/store";
 interface MovieProp {
   movie: Movies;
 }
 const Movie = ({ movie }: MovieProp) => {
+  const { toggleBookmark } = useMovies();
   return (
     <div className="relative h-[9.625rem] space-y-2">
       <div className="relative h-[6.875rem]">
@@ -67,7 +69,13 @@ const Movie = ({ movie }: MovieProp) => {
           {movie.title}
         </p>
       </div>
-      <div className="absolute right-2 top-0 flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-[#10141E] opacity-50 md:top-4 md:right-4">
+      <div
+        onClick={() => {
+          console.log(movie);
+          toggleBookmark(movie);
+        }}
+        className="absolute right-2 top-0 flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-[#10141E] opacity-50 md:top-4 md:right-4"
+      >
         <div className=" relative">
           <Image
             src="./assets/icon-bookmark-empty.svg"
