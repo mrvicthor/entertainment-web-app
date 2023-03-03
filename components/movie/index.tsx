@@ -77,12 +77,21 @@ const Movie = ({ movie }: MovieProp) => {
         className="absolute right-2 top-0 flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-[#10141E] opacity-50 md:top-4 md:right-4"
       >
         <div className=" relative">
-          <Image
-            src="./assets/icon-bookmark-empty.svg"
-            alt="empty bookmark"
-            height={14}
-            width={12}
-          />
+          {movie.isBookmarked === true ? (
+            <Image
+              src="./assets/icon-bookmark-full.svg"
+              alt="empty bookmark"
+              height={14}
+              width={12}
+            />
+          ) : (
+            <Image
+              src="./assets/icon-bookmark-empty.svg"
+              alt="empty bookmark"
+              height={14}
+              width={12}
+            />
+          )}
         </div>
       </div>
     </div>
