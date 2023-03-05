@@ -7,12 +7,12 @@ interface TrendProps {
 }
 const Trend = ({ trend }: TrendProps) => {
   return (
-    <div className="relative h-[8.75rem] rounded-md md:h-[14.375rem]">
+    <div className="group relative h-[8.75rem] cursor-pointer rounded-md md:h-[14.375rem]">
       <Image
         src={trend.thumbnail.trending.small.replace(/^\.\//, "/")}
         alt="movie image"
         fill
-        className="rounded-md object-cover"
+        className="rounded-md object-cover duration-700 ease-in-out group-hover:scale-105 "
         sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"

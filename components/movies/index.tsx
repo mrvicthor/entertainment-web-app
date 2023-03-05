@@ -23,7 +23,7 @@ const Movies = () => {
           Recommended for you
         </h2>
       )}
-      <div className="grid auto-cols-[10.25rem] grid-cols-2 gap-x-[0.9375rem] gap-y-4 pr-4 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid auto-cols-[10.25rem] grid-cols-2 gap-x-[0.9375rem] gap-y-4 pr-4 md:auto-cols-[13.75rem] md:grid-cols-3 md:gap-y-6 lg:auto-cols-[17.5rem] lg:grid-cols-4 lg:gap-y-12 lg:gap-x-[2.5rem]">
         {movies.map((movie, index) => (
           <Movie key={index} movie={movie} />
         ))}

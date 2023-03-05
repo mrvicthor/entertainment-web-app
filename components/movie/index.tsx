@@ -8,8 +8,8 @@ interface MovieProp {
 const Movie = ({ movie }: MovieProp) => {
   const { toggleBookmark } = useMovies();
   return (
-    <div className="relative h-[9.625rem] space-y-2">
-      <div className="relative h-[6.875rem]">
+    <div className="group relative h-[9.625rem] cursor-pointer space-y-2 md:h-[12rem]">
+      <div className="relative h-[6.875rem] duration-700 ease-in-out group-hover:scale-105 md:h-[8.75rem] lg:h-[10.875rem]">
         <Image
           src={movie.thumbnail.regular.small.replace(/^\.\//, "/")}
           alt="movie image"
@@ -65,7 +65,7 @@ const Movie = ({ movie }: MovieProp) => {
             {movie.rating}
           </span>
         </div>
-        <p className="pt-1 text-[0.9375rem] font-medium leading-[18.9px] md:text-[1.5rem] md:leading-[30.24px]">
+        <p className="pt-1 text-[0.9375rem] font-medium leading-[18.9px] md:text-[1.125rem] md:leading-[30.24px]">
           {movie.title}
         </p>
       </div>
@@ -74,7 +74,7 @@ const Movie = ({ movie }: MovieProp) => {
           console.log(movie);
           toggleBookmark(movie);
         }}
-        className="absolute right-2 top-0 flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-[#10141E] opacity-50 md:top-4 md:right-4"
+        className="absolute right-2 top-0 flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-[#10141E] opacity-50 md:top-0 md:right-4 lg:top-1"
       >
         <div className=" relative">
           {movie.isBookmarked === true ? (
