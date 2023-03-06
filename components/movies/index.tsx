@@ -19,7 +19,7 @@ const Movies = () => {
         </p>
       )}
       {search !== "" ? null : (
-        <h2 className="text-[1.25rem] leading-[25.2px] tracking-tight">
+        <h2 className="text-[1.25rem] leading-[25.2px] tracking-tight md:text-[2rem] md:leading-[40.32px]">
           Recommended for you
         </h2>
       )}
