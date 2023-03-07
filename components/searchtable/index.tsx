@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { useMovies } from "@/store";
 
-const SearchTable = () => {
+interface InputProps {
+  placeholder: string;
+}
+
+const SearchTable = ({ placeholder }: InputProps) => {
   const { search, setSearch } = useMovies();
   console.log(search);
   return (
@@ -18,8 +22,8 @@ const SearchTable = () => {
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        placeholder="Search for movies or TV series"
-        className="bg-transparent text-[#ffffff] outline-none placeholder:text-xs focus:outline-none"
+        placeholder={placeholder}
+        className="bg-transparent text-[#ffffff] outline-none placeholder:text-xs focus:outline-none md:text-[1.5rem]"
       />
     </form>
   );

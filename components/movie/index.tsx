@@ -9,7 +9,7 @@ const Movie = ({ movie }: MovieProp) => {
   const { toggleBookmark } = useMovies();
   return (
     <div className="group relative h-[9.625rem] cursor-pointer space-y-2 md:h-[12rem]">
-      <div className="relative h-[6.875rem] duration-700 ease-in-out group-hover:scale-105 md:h-[8.75rem] lg:h-[10.875rem]">
+      <div className="relative h-[6.875rem] rounded-md duration-700 ease-in-out group-hover:scale-105 md:h-[8.75rem] lg:h-[10.875rem]">
         <Image
           src={movie.thumbnail.regular.small.replace(/^\.\//, "/")}
           alt="movie image"
