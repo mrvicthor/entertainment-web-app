@@ -3,6 +3,7 @@ import { SearchTable, Movies as MovieList } from "@/components";
 import { useMovies } from "@/store";
 const Movies = () => {
   const { search, movies } = useMovies();
+  const filteredMovies = movies.filter((movie) => movie.category === "Movie");
   return (
     <section className="space-y-6 pt-6 pl-4 md:pl-0 lg:pt-4 ">
       <div className="md:mx-auto md:max-w-[44.9375rem] md:pl-0 lg:mx-0 lg:max-w-full">
@@ -16,7 +17,7 @@ const Movies = () => {
           </h2>
         )}
       </div>
-      <MovieList />
+      <MovieList movies={filteredMovies} />
     </section>
   );
 };

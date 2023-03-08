@@ -1,8 +1,13 @@
 import { Movie } from "@/components";
+import { Movies } from "@/model";
 import { useMovies } from "@/store";
 
-const Movies = () => {
-  const { movies, search } = useMovies();
+interface MoviesProps {
+  movies: Movies[];
+}
+
+const Movies = ({ movies }: MoviesProps) => {
+  const { search } = useMovies();
   //   let allMovies = movies;
   //   if (search) {
   //     allMovies = allMovies.filter((movie) =>

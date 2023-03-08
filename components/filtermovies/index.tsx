@@ -15,7 +15,7 @@ const FilterMovies = () => {
           Recommended for you
         </h2>
       )}
-      <Movies />
+      <Movies movies={movies} />
     </section>
   );
 };
