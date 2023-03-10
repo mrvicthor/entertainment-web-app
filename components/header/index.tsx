@@ -23,6 +23,7 @@ const Header = () => {
             href="/"
             className={selectedRoute === "" ? "active" : ""}
             onClick={() => setSelectedRoute("")}
+            aria-label="home navigation"
           >
             <div className={`nav-link relative cursor-pointer `}>
               <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
@@ -34,6 +35,7 @@ const Header = () => {
             href="/movies"
             onClick={() => setSelectedRoute("/movies")}
             className={selectedRoute === "/movies" ? "active" : ""}
+            aria-label="movies navigation"
           >
             <div className="nav-link relative cursor-pointer">
               <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
@@ -45,6 +47,7 @@ const Header = () => {
             href="/tvseries"
             onClick={() => setSelectedRoute("/tvseries")}
             className={selectedRoute === "/tvseries" ? "active" : ""}
+            aria-label="tvseries navigation"
           >
             <div className="nav-link relative cursor-pointer">
               <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
@@ -56,6 +59,7 @@ const Header = () => {
             href="/bookmark"
             onClick={() => setSelectedRoute("/bookmark")}
             className={selectedRoute === "/bookmark" ? "active" : ""}
+            aria-label="bookmarked navigation"
           >
             <div className="nav-link relative cursor-pointer">
               <svg width="17" height="20" xmlns="http://www.w3.org/2000/svg">
