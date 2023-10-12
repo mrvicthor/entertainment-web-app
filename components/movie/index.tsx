@@ -71,7 +71,6 @@ const Movie = ({ movie }: MovieProp) => {
       </div>
       <div
         onClick={() => {
-          console.log(movie);
           toggleBookmark(movie);
         }}
         className="absolute right-2 top-0 flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-[#10141E] opacity-50 md:top-0 md:right-4 lg:top-1"

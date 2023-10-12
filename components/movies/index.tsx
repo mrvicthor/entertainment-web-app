@@ -14,7 +14,7 @@ const Movies = ({ movies }: MoviesProps) => {
   //       movie.title.toLowerCase().startsWith(search.toLowerCase())
   //     );
   //   }
-  console.log(search);
+
   return (
     <section className="space-y-6 md:mx-auto md:max-w-[44.9375rem] lg:mx-0 lg:max-w-full">
       {search !== "" && movies.length > 0 && (

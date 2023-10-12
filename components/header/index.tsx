@@ -11,7 +11,7 @@ const Header = () => {
   const [selectedRoute, setSelectedRoute] = useState("");
 
   return (
-    <header className="h-[3.5rem] md:h-[4.5rem] lg:col-span-1 lg:h-screen lg:w-[6rem] lg:pb-16">
+    <header className="h-[3.5rem] md:h-[4.5rem] lg:fixed lg:col-span-1 lg:h-[98vh] lg:w-[6rem] lg:pb-16">
       <nav className="flex items-center justify-between bg-[#161D2F] px-4 py-[1.125rem] md:mx-auto md:max-w-[44.9375rem] md:rounded-md lg:h-full lg:flex-col">
         <div className="relative cursor-pointer">
           <Link href="/">

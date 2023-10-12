@@ -7,7 +7,6 @@ interface InputProps {
 
 const SearchTable = ({ placeholder }: InputProps) => {
   const { search, setSearch } = useMovies();
-  console.log(search);
   return (
     <form className="flex h-[1.5rem] min-w-[16.0625rem] space-x-4">
       <div className="relative">
